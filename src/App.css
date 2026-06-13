@@ -1,0 +1,246 @@
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Background color is driven by scroll progress via inline style in App.tsx. */
+}
+
+/* Header ---------------------------------------------------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 6vw;
+  z-index: 10;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.header--light {
+  background-color: var(--white);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+  display: inline-flex;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  transition: filter 0.4s ease;
+}
+
+/* Recolor the logo to blue on the light header. */
+.header--light .logo img {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(82%) saturate(2400%)
+    hue-rotate(214deg) brightness(101%) contrast(101%);
+}
+
+.nav {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.nav__link {
+  position: relative;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  opacity: 0.9;
+  padding-bottom: 0.25rem;
+  transition: opacity 0.2s ease, color 0.4s ease;
+}
+
+.header--light .nav__link {
+  color: var(--blue);
+}
+
+.nav__link:hover {
+  opacity: 1;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav__link.is-active {
+  opacity: 1;
+}
+
+.nav__link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Sections -------------------------------------------------------------- */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Hero ------------------------------------------------------------------ */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 15.5vw;
+  overflow: hidden;
+}
+
+.hero__text {
+  flex: 0 0 auto;
+  width: 44vw;
+  transform: translateY(-3vh);
+  z-index: 2;
+}
+
+.hero__title {
+  font-size: 4vw;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1.5vh;
+  white-space: nowrap;
+}
+
+.hero__title strong {
+  font-weight: 700;
+}
+
+.hero__subtitle {
+  font-size: 1.25vw;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 32vw;
+  opacity: 0.95;
+  margin-bottom: 2.5vh;
+}
+
+.socials {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--white);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.social svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  color: var(--white);
+}
+
+/* Person image: anchored to bottom, ~2/3 of viewport height ------------- */
+.hero__image {
+  position: absolute;
+  right: 15.5vw;
+  bottom: 0;
+  height: 82vh;
+  height: 82dvh;
+  display: flex;
+  align-items: flex-end;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__image img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+}
+
+/* About ----------------------------------------------------------------- */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 15.5vw;
+  color: var(--blue);
+  border-top: 2px solid var(--blue);
+}
+
+.about__content {
+  max-width: 720px;
+}
+
+.about__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.about__text {
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  color: #1f3a8a;
+}
+
+/* Responsive ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-start;
+    padding-top: 6rem;
+  }
+
+  .hero__text {
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .hero__title {
+    white-space: normal;
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1rem, 4vw, 1.15rem);
+    max-width: 100%;
+  }
+
+  .hero__image {
+    height: 45vh;
+    height: 45dvh;
+    right: 50%;
+    transform: translateX(50%);
+    opacity: 0.5;
+  }
+
+  .about {
+    padding: 6rem 8vw;
+  }
+}
