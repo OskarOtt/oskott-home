@@ -7,7 +7,7 @@ function Header({ light, activeSection }: HeaderProps) {
   return (
     <header className={`header${light ? ' header--light' : ''}`}>
       <a className="logo" href="#home" aria-label="Home">
-        <img src="/logo.svg" alt="Logo" />
+        <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Logo" />
       </a>
       <nav className="nav">
         <a
