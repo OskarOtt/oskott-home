@@ -20,7 +20,7 @@ function Home() {
             aria-label="LinkedIn"
           >
             <svg>
-              <use href="/icons.svg#linkedin-icon" />
+              <use href={`${import.meta.env.BASE_URL}icons.svg#linkedin-icon`} />
             </svg>
           </a>
           <a
@@ -31,12 +31,12 @@ function Home() {
             aria-label="Instagram"
           >
             <svg>
-              <use href="/icons.svg#instagram-icon" />
+              <use href={`${import.meta.env.BASE_URL}icons.svg#instagram-icon`} />
             </svg>
           </a>
           <a className="social" href="mailto:hello@example.com" aria-label="Email">
             <svg>
-              <use href="/icons.svg#mail-icon" />
+              <use href={`${import.meta.env.BASE_URL}icons.svg#mail-icon`} />
             </svg>
           </a>
         </div>
