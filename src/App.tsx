@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header'
 import Home from './components/Home'
 import About from './components/About'
+import Projects from './components/Projects'
 
 const BLUE = { r: 0x42, g: 0x72, b: 0xff }
 const WHITE = { r: 0xff, g: 0xff, b: 0xff }
@@ -19,9 +20,13 @@ function App() {
     const handleScroll = () => {
       const vh = window.innerHeight
       // 0 while on Home, 1 once fully scrolled into About.
-      const p = Math.min(Math.max(window.scrollY / vh, 0), 1)
+      const p = Math.min(Math.max(window.scrollY / (vh * 0.83), 0), 1)
       setProgress(p)
-      setActiveSection(window.scrollY >= vh * 0.5 ? 'about' : 'home')
+      setActiveSection(
+        window.scrollY >= vh * 1.5 ? 'projects'
+        : window.scrollY >= vh * 0.5 ? 'about'
+        : 'home'
+      )
     }
 
     handleScroll()
@@ -42,6 +47,7 @@ function App() {
       <Header light={light} activeSection={activeSection} />
       <Home />
       <About />
+      <Projects />
     </div>
   )
 }
