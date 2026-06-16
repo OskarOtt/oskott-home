@@ -323,7 +323,7 @@
   justify-content: center;
   padding: 5rem 10vw;
   scroll-margin-top: 3rem;
-  color: var(--blue);
+  color: #1f3a8a;
   border-top: 2px solid var(--blue);
 }
 
@@ -336,10 +336,11 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 0.75rem;
+  color: var(--blue);
 }
 
 .projects__ingress {
-  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  font-size: clamp(1rem, 1.1vw, 1rem);
   line-height: 1.65;
   opacity: 0.55;
   margin-bottom: 2.5rem;
@@ -360,7 +361,7 @@
   border: 1.5px solid var(--blue);
   border-radius: 1rem;
   text-decoration: none;
-  color: var(--blue);
+  color: #1f3a8a;
   background-color: var(--white);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -393,8 +394,9 @@
 /* Responsive ------------------------------------------------------------ */
 @media (max-width: 768px) {
   .hero {
-    align-items: flex-start;
-    padding-top: 6rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8vw;
   }
 
   .hero__text {
@@ -402,6 +404,8 @@
     width: 100%;
     max-width: 100%;
     margin-left: 0;
+    text-align: center;
+    transform: none;
   }
 
   .hero__title {
@@ -415,11 +419,11 @@
   }
 
   .hero__image {
-    height: 45vh;
-    height: 45dvh;
-    right: 50%;
-    transform: translateX(50%);
-    opacity: 0.5;
+    display: none;
+  }
+
+  .socials {
+    justify-content: center;
   }
 
   .about {
