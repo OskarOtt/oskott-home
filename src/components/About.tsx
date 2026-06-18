@@ -1,3 +1,5 @@
+import profileImg from '../assets/pngPortrait.png'
+
 const TECH_STACK = [
   'React', 'TypeScript', "Java", "Kotlin",
   'SQL', 'Kybernetes', 'Git', 'REST APIs',
@@ -10,6 +12,12 @@ function About() {
 
         {/* ── Left sidebar ── */}
         <aside className="about__sidebar">
+          <div className="about__profile-img-wrap">
+            <div>
+              <img src={profileImg} alt="Oskar Ottesen" className="about__profile-img" />
+            </div>
+          </div>
+
           <div className="about__sidebar-section">
             <h3 className="about__sidebar-heading">Info</h3>
             <ul className="about__info-list">
@@ -55,7 +63,7 @@ function About() {
 
           <div className="about__body-section">
             <p className="about__text">
-              I am a consultant and full-stack developer currently working for Bouvet, with experience from both client-facing and internal projects. I have worked on developing solutions across a range of technologies and have strong expertise in both frontend and backend development. With a Bachelor's degree in Computer Engineering and a vocational certification in Data Electronics, I have a solid technical foundation and am comfortable working throughout the entire software development lifecycle—from concept and architecture to implementation and maintenance.
+              I am a consultant and full-stack developer working for Bouvet, with experience from both client-facing and internal projects. I have worked on developing solutions across a range of technologies and have strong expertise in both frontend and backend development. With a Bachelor's degree in Computer Engineering and a vocational certification in Data Electronics, I have a solid technical foundation and am comfortable working throughout the entire software development lifecycle—from concept and architecture to implementation and maintenance.
             </p>
             <p className="about__text">
             </p>
