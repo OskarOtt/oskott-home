@@ -8,8 +8,8 @@ const PROJECTS = [
   {
     title: 'Shop App',
     description:
-        'A complete webshop template, with jwt token user auth, product listing, shopping cart, stripe payment and order management. Built with React TypeScript, and java backend.',
-    link: undefined,
+        'A complete webshop template, with jwt token user auth, product listing, shopping cart, stripe payment and order management (Migth be slow to load since it is hosted on free render).',
+    link: "https://oskarott.github.io/webshop-template-frontend/",
   },
 ]
 
