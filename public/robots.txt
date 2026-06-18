@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oskott.com/sitemap.xml
