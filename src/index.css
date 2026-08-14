@@ -3,6 +3,10 @@
 :root {
   --blue: #4272FF;
   --white: #ffffff;
+  --text-dark: #1f3a8a;
+  --border-subtle: rgba(31, 58, 138, 0.12);
+  --section-padding: 5rem 10vw;
+  --section-padding-mobile: 4rem 8vw;
 }
 
 * {
@@ -28,4 +32,20 @@ body {
   color: var(--white);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Shared layout base, used by every page section ------------------------- */
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Background color is driven by scroll progress via inline style in App.tsx. */
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
