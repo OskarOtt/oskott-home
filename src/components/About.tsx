@@ -1,4 +1,4 @@
-import profileImg from '../assets/pngPortrait.png'
+import profileImg from '../assets/profile.jpg'
 
 const TECH_STACK = [
   'React', 'TypeScript', "Java", "Kotlin",
