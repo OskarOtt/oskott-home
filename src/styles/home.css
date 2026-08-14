@@ -1,0 +1,148 @@
+/* Hero ------------------------------------------------------------------ */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 17vw;
+  overflow: hidden;
+}
+
+.hero__text {
+  flex: 0 0 auto;
+  width: 44vw;
+  transform: translateY(-3vh);
+  z-index: 2;
+}
+
+.hero__title {
+  font-size: 4vw;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1.5vh;
+  white-space: nowrap;
+}
+
+.hero__title strong {
+  font-weight: 700;
+}
+
+.hero__subtitle {
+  font-size: 1.20vw;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 32vw;
+  opacity: 0.95;
+  margin-bottom: 2.5vh;
+}
+
+.socials {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--white);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.social svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  color: var(--white);
+}
+
+/* Person image: anchored to bottom, ~2/3 of viewport height ------------- */
+.hero__image {
+  position: absolute;
+  right: 16vw;
+  bottom: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__image img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+}
+
+/* Scroll hint arrow ----------------------------------------------------- */
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.75);
+  z-index: 5;
+  animation: bounce 2s ease-in-out infinite;
+  transition: color 0.2s ease;
+}
+
+.scroll-hint:hover {
+  color: var(--white);
+}
+
+.scroll-hint svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* Responsive -------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    align-items: center;
+    justify-content: center;
+    padding: 0 8vw;
+  }
+
+  .hero__text {
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    text-align: center;
+    transform: none;
+  }
+
+  .hero__title {
+    white-space: normal;
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1rem, 4vw, 1.15rem);
+    max-width: 100%;
+  }
+
+  .hero__image {
+    display: none;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+}

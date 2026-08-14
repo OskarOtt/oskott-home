@@ -1,0 +1,23 @@
+/* Education / certification row (About page) ---------------------------- */
+.about__education-item {
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about__education-item:last-child {
+  border-bottom: none;
+}
+
+.about__education-title {
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  margin-bottom: 0.15rem;
+  color: var(--text-dark);
+}
+
+.about__education-meta {
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  opacity: 0.6;
+  margin-bottom: 0.4rem;
+  color: var(--text-dark);
+}

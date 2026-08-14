@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 import Header from './components/Header'
-import Home from './components/Home'
-import About from './components/About'
-import Projects from './components/Projects'
+import Home from './pages/Home'
+import About from './pages/About'
+import Projects from './pages/Projects'
+import type { Section } from './types'
 
 const BLUE = { r: 0x42, g: 0x72, b: 0xff }
 const WHITE = { r: 0xff, g: 0xff, b: 0xff }
@@ -14,7 +14,7 @@ function lerp(a: number, b: number, t: number) {
 
 function App() {
   const [progress, setProgress] = useState(0)
-  const [activeSection, setActiveSection] = useState('home')
+  const [activeSection, setActiveSection] = useState<Section>('home')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,9 +45,11 @@ function App() {
   return (
     <div className="page" style={{ backgroundColor: bg }}>
       <Header light={light} activeSection={activeSection} />
-      <Home />
-      <About />
-      <Projects />
+      <main>
+        <Home />
+        <About />
+        <Projects />
+      </main>
     </div>
   )
 }

@@ -1,0 +1,35 @@
+/* Projects ---------------------------------------------------------------- */
+.projects {
+  display: flex;
+  justify-content: center;
+  padding: var(--section-padding);
+  scroll-margin-top: 3rem;
+  color: var(--text-dark);
+  border-top: 2px solid var(--blue);
+}
+
+.projects__inner {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.projects__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--blue);
+}
+
+.projects__ingress {
+  font-size: clamp(1rem, 1.1vw, 1rem);
+  line-height: 1.65;
+  opacity: 0.55;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
