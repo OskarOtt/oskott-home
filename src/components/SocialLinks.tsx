@@ -1,8 +1,12 @@
 import { SOCIAL_LINKS } from '../data/contact'
 
-function SocialLinks() {
+type SocialLinksProps = {
+  className?: string
+}
+
+function SocialLinks({ className }: SocialLinksProps) {
   return (
-    <div className="socials">
+    <div className={className ? `socials ${className}` : 'socials'}>
       {SOCIAL_LINKS.map((social) => (
         <a
           key={social.id}
