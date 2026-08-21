@@ -26,6 +26,34 @@
   font-weight: 700;
 }
 
+.word--hidden,
+.letter--hidden {
+  visibility: hidden;
+}
+
+.caret {
+  display: inline-block;
+  width: 0.09em;
+  height: 0.85em;
+  margin-left: 0.05em;
+  background-color: currentColor;
+  vertical-align: middle;
+  visibility: visible;
+  animation: caret-blink 0.8s step-end infinite;
+}
+
+@keyframes caret-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 .hero__subtitle {
   font-size: 1.20vw;
   font-weight: 400;
@@ -38,6 +66,16 @@
 .socials {
   display: flex;
   gap: 1.25rem;
+}
+
+.socials--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.socials--visible {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .social {
