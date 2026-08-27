@@ -6,6 +6,12 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    title: 'Towerdef.io',
+    description:
+        'A small browser tower defense game, terminal themed, with towers, waves, different enemies and achievements. Written with React, TypeScript and Vite, uses local storage for game saves.',
+    link: 'https://towerdef.io/',
+  },
+  {
     title: 'Dopamine Checklist',
     description:
       'A small app for adding daily and one-time goals and checking them off. Designed for larger touchscreens. Uses local storage for persistence.',
