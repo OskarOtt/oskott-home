@@ -27,5 +27,5 @@ export type SocialLink = {
 export const SOCIAL_LINKS: SocialLink[] = [
   { id: 'linkedin', href: CONTACT.linkedin.url, label: 'LinkedIn', iconId: 'linkedin-icon' },
   { id: 'instagram', href: CONTACT.instagram.url, label: 'Instagram', iconId: 'instagram-icon' },
-  { id: 'email', href: `mailto:${CONTACT.email}`, label: 'Email', iconId: 'mail-icon' },
+  { id: 'github', href: CONTACT.github.url, label: 'GitHub', iconId: 'github-icon' },
 ]
