@@ -21,6 +21,6 @@ export const PROJECTS: Project[] = [
     title: 'Shop App',
     description:
       'A complete webshop template, with jwt token user auth, product listing, shopping cart, stripe payment, email and order management.',
-    link: 'https://oskarott.github.io/webshop-template-frontend/',
+    link: 'https://webshop-demo.oskott.com',
   },
 ]
