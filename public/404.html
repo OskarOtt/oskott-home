@@ -1,0 +1,18 @@
+<!doctype html>
+<!--
+  GitHub Pages only serves static files, so a direct request to a path like
+  /flink/privacypolicy would normally 404. This fallback redirects unknown
+  paths back to index.html (preserving the path in sessionStorage) so the
+  client-side router in src/App.tsx can render the correct hidden page.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+    <script>
+      sessionStorage.setItem('redirectPath', location.pathname + location.search + location.hash)
+      location.replace('/')
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,40 @@
+.flink-privacy {
+  min-height: 100vh;
+  padding: 3rem 1.5rem 4rem;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.flink-privacy__content {
+  max-width: 720px;
+  width: 100%;
+}
+
+.flink-privacy__content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.flink-privacy__content h2 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.flink-privacy__content p,
+.flink-privacy__content li {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.flink-privacy__content ul {
+  padding-left: 1.5rem;
+}
+
+.flink-privacy__updated {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}

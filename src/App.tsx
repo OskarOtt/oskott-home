@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ComponentType } from 'react'
 import Header from './components/Header'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
+import FlinkPrivacyPolicy from './pages/FlinkPrivacyPolicy'
 import type { Section } from './types'
 
 const BLUE = { r: 0x42, g: 0x72, b: 0xff }
@@ -12,9 +13,17 @@ function lerp(a: number, b: number, t: number) {
   return Math.round(a + (b - a) * t)
 }
 
+// Hidden pages reachable only via direct link, not linked from the nav/sitemap.
+const HIDDEN_ROUTES: Record<string, ComponentType> = {
+  '/flink/privacypolicy': FlinkPrivacyPolicy,
+}
+
 function App() {
   const [progress, setProgress] = useState(0)
   const [activeSection, setActiveSection] = useState<Section>('home')
+
+  const path = window.location.pathname.replace(/\/+$/, '') || '/'
+  const HiddenPage = HIDDEN_ROUTES[path]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +50,10 @@ function App() {
   )}, ${lerp(BLUE.b, WHITE.b, progress)})`
 
   const light = progress > 0.5
+
+  if (HiddenPage) {
+    return <HiddenPage />
+  }
 
   return (
     <div className="page" style={{ backgroundColor: bg }}>
